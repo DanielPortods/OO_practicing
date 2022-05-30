@@ -1,18 +1,19 @@
 #pragma once
+
 #include "Impressa.h"
 
 class Livro : public Impressa
 {
-private:
-    char isbn[20];
-
 public:
-    Livro();
-    Livro(unsigned int codigo, char titulo[], char editora[], unsigned int paginas, char isbn[]);
-    ~Livro();
+	Livro();
+	Livro(unsigned int codigo, string titulo, string editora, unsigned int paginas, string isbn);
+	~Livro();
 
-    void setIsbn(char isbn[]);
-    char *getIsbn();   
+	void setIsbn(string isbn);
+	string getIsbn();
 
-    void showInfo();
+	void showInfo();
+
+private:
+	string isbn;
 };

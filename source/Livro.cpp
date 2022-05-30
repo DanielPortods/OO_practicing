@@ -1,35 +1,41 @@
-#include <cstring>
 #include "Livro.h"
+#include <string>
 
 #include <iostream>
 using namespace std;
 
-Livro::Livro(){
+Livro::Livro()
+{
+
 }
 
-Livro::Livro(unsigned int codigo, char titulo[], char editora[], unsigned int paginas, char isbn[])
+Livro::Livro(unsigned int codigo, string titulo, string editora, unsigned int paginas, string isbn)
 : Impressa(codigo, titulo, editora, paginas)
 {
-    this->setIsbn(isbn);
+	this->setIsbn(isbn);
 }
 
-Livro::~Livro(){
+Livro::~Livro()
+{
 
 }
 
-void Livro::setIsbn(char isbn[]){
-    strcpy(this->isbn, isbn);
+void Livro::setIsbn(string isbn)
+{
+	this->isbn = isbn;
 }
 
-char *Livro::getIsbn(){
-    return this->isbn;
+string Livro::getIsbn()
+{
+	return this->isbn;
 }
 
-void Livro::showInfo(){
-    cout << "\nLivro:" << endl;
-    cout << " Código: " << this->getCodigo() << endl;
-    cout << " Título: " << this->getTitulo() << endl;
-    cout << " Editora: " << this->getEditora() << endl;
-    cout << " Páginas: " << this->getPaginas() << endl;
-    cout << " ISBN: " << this->getIsbn() << endl;
+void Livro::showInfo()
+{
+	cout << "\n\nLivro: ";
+	cout << "\n codigo(" << this->getCodigo() << ") ";
+	cout << "\n titulo(" << this->getTitulo() << ") ";
+	cout << "\n editora(" << this->getEditora() << ") ";
+	cout << "\n paginas(" << this->getPaginas() << ") ";
+	cout << "\n isbn(" << this->getIsbn() << ") ";
 }

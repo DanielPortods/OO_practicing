@@ -1,35 +1,43 @@
-#include <cstring>
 #include "Impressa.h"
+#include <string>
 
 #include <iostream>
 using namespace std;
 
-Impressa::Impressa(){
+Impressa::Impressa()
+{
+
 }
 
-Impressa::Impressa(unsigned int codigo, char titulo[], char editora[], unsigned int paginas)
+Impressa::Impressa(unsigned int codigo, string titulo, string editora, unsigned int paginas)
 : Midia(codigo, titulo)
 {
-    this->setEditora(editora);
-    this->setPaginas(paginas);
+	this->setEditora(editora);
+	this->setPaginas(paginas);
 }
 
-Impressa::~Impressa(){
+Impressa::~Impressa()
+{
 
 }
 
-void Impressa::setEditora(char editora[]){
-    strcpy(this->editora, editora);
+void Impressa::setEditora(string editora)
+{
+	this->editora = editora;
 }
 
-char *Impressa::getEditora(){
-    return this->editora;
+string Impressa::getEditora()
+{
+	return this->editora;
 }
 
-void Impressa::setPaginas(unsigned int paginas){
-    this->paginas=paginas;
+void Impressa::setPaginas(unsigned int paginas)
+{
+	this->paginas = paginas;
 }
 
-unsigned int Impressa::getPaginas(){
-    return this->paginas;
+unsigned int Impressa::getPaginas()
+{
+	return this->paginas;
 }
+
