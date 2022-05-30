@@ -1,25 +1,32 @@
 #pragma once
+
 #include "I_Exibivel.h"
+#include <string>
+using namespace std;
 
 class Midia : public I_Exibivel
 {
-private:
-    unsigned int codigo;
-    char titulo[100];
-    static int instancias;
-
 public:
-    Midia();
-    Midia(unsigned int codigo, char titulo[]);
-    ~Midia();
+	Midia();
+	Midia(unsigned int codigo, string titulo);
+	~Midia();
 
-    void setCodigo(unsigned int codigo);
-    unsigned int getCodigo();
+	void setCodigo(unsigned int codigo);
+	unsigned int getCodigo();
 
-    void setTitulo(char titulo[]);
-    char *getTitulo();
+	void setTitulo(string titulo);
+	string getTitulo();
 
-    virtual void showInfo() = 0;
+	virtual void showInfo() = 0;
 
-    static int getInstancias();
+	static int getInstancias();
+
+
+private:
+	unsigned int codigo;
+	string titulo;
+
+	static int instancias;
+
+	
 };

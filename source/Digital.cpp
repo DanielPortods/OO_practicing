@@ -1,36 +1,43 @@
-#include <cstring>
 #include "Digital.h"
 
 #include <iostream>
 using namespace std;
 
-Digital::Digital(){
+Digital::Digital()
+: Midia()
+{
 
 }
 
-Digital::Digital(unsigned int codigo, char titulo[], unsigned int discos, unsigned int duracao)
+Digital::Digital(unsigned int codigo, string titulo, unsigned int discos, unsigned int duracao)
 : Midia(codigo, titulo)
 {
-    this->setDiscos(discos);
-    this->setDuracao(duracao);
+	this->setDiscos(discos);
+	this->setDuracao(duracao);
 }
 
-Digital::~Digital(){
+Digital::~Digital()
+{
 
 }
 
-void Digital::setDiscos(unsigned int discos){
-    this->discos=discos;
+void Digital::setDiscos(unsigned int discos)
+{
+	this->discos = discos;
 }
 
-unsigned int Digital::getDiscos(){
-    return this->duracao;
+unsigned int Digital::getDiscos()
+{
+	return discos;
 }
 
-void Digital::setDuracao(unsigned int duracao){
-    this->duracao=duracao;
+void Digital::setDuracao(unsigned int duracao)
+{
+	this->duracao = duracao;
 }
 
-unsigned int Digital::getDuracao(){
-    return this->duracao;
+unsigned int Digital::getDuracao()
+{
+	return duracao;
 }
+

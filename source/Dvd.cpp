@@ -1,42 +1,56 @@
-#include <cstring>
 #include "Dvd.h"
+#include <string>
 
 #include <iostream>
 using namespace std;
 
-Dvd::Dvd(){
-}
-
-Dvd::Dvd(unsigned int codigo, char titulo[], unsigned int discos, unsigned int duracao, unsigned int regiao, char legendas[]):Digital(codigo, titulo, discos, duracao){
-    this->setRegiao(regiao);
-    this->setLegendas(legendas);
-}
-
-Dvd::~Dvd(){
+Dvd::Dvd()
+{
 
 }
 
-void Dvd::setRegiao(unsigned int regiao){
-    this->regiao=regiao;
+Dvd::Dvd(unsigned int codigo, string titulo, unsigned int discos, unsigned int duracao, string legendas, unsigned int regiao)
+: Digital(codigo, titulo, discos, duracao)
+{
+
+	this->setLegendas(legendas);
+	this->setRegiao(regiao);
 }
 
-unsigned int Dvd::getRegiao(){
-    return this->regiao;
+Dvd::~Dvd()
+{
+
 }
 
-void Dvd::setLegendas(char legendas[]){
-    strcpy(this->legendas, legendas);
+void Dvd::setLegendas(string legendas)
+{
+	this->legendas = legendas;
 }
 
-char *Dvd::getLegendas(){
-    return this->legendas;
+string Dvd::getLegendas()
+{
+	return legendas;
 }
 
-void Dvd::showInfo(){
-    cout << "\nDVD:" << endl;
-    cout << " Código: " << this->getCodigo() << endl;
-    cout << " Título: " << this->getTitulo() << endl;
-    cout << " Discos: " << this->getDiscos() << endl;
-    cout << " Região: " << this->getRegiao() << endl;
-    cout << " Legendas: " << this->getLegendas() << endl;
+void Dvd::setRegiao(unsigned int regiao)
+{
+	this->regiao = regiao;
+}
+
+unsigned int Dvd::getRegiao()
+{
+	return regiao;
+}
+
+
+
+void Dvd::showInfo()
+{
+	cout << "\n\nDvd: ";
+	cout << "\n codigo(" << this->getCodigo() << ") ";
+	cout << "\n titulo(" << this->getTitulo() << ") ";
+	cout << "\n discos(" << this->getDiscos() << ") ";
+	cout << "\n duracao(" << this->getDuracao() << ") ";
+	cout << "\n legendas(" << this->getLegendas() << ") ";
+	cout << "\n regiao(" << this->getRegiao() << ") ";
 }

@@ -1,40 +1,48 @@
-#include <cstring>
 #include "Midia.h"
-
+#include <string>
 #include <iostream>
 using namespace std;
 
-Midia::Midia(){
-    
+Midia::Midia()
+{
+
 }
 
-Midia::Midia(unsigned int codigo, char titulo[]){
-    this->setCodigo(codigo);
-    this->setTitulo(titulo);
-    instancias++;
+Midia::Midia(unsigned int codigo, string titulo)
+{
+	this->setCodigo(codigo);
+	this->setTitulo(titulo);
+	instancias++;
 }
 
-Midia::~Midia(){
+Midia::~Midia()
+{
+
 }
 
-void Midia::setCodigo(unsigned int codigo){
-    this->codigo=codigo;
+void Midia::setCodigo(unsigned int codigo)
+{
+	this->codigo = codigo;
 }
 
-unsigned int Midia::getCodigo(){
-    return this->codigo;
+unsigned int Midia::getCodigo()
+{
+	return this->codigo;
 }
 
-void Midia::setTitulo(char titulo[]){
-    strcpy(this->titulo, titulo);
+void Midia::setTitulo(string titulo)
+{
+	this->titulo = titulo;
 }
 
-char *Midia::getTitulo(){
-    return this->titulo;
+string Midia::getTitulo()
+{
+	return this->titulo;
 }
 
-int Midia::getInstancias(){
-    return instancias;
+int Midia::getInstancias()
+{
+	return instancias;
 }
 
 int Midia::instancias = 0;

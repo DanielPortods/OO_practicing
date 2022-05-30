@@ -1,32 +1,42 @@
-#include <cstring>
 #include "Cd.h"
+#include <string>
 
 #include <iostream>
 using namespace std;
 
-Cd::Cd(){
-}
-
-Cd::Cd(unsigned int codigo, char titulo[], unsigned int discos, unsigned int duracao, unsigned int faixas):Digital(codigo, titulo, discos, duracao){
-    this->setFaixas(faixas);    
-}
-
-Cd::~Cd(){
+Cd::Cd()
+{
 
 }
 
-void Cd::setFaixas(unsigned int faixas){
-    this->faixas=faixas;
+Cd::Cd(unsigned int codigo, string titulo, unsigned int discos, unsigned int duracao, unsigned int faixas)
+: Digital(codigo, titulo, discos, duracao)
+{
+	this->setFaixas(faixas);
 }
 
-unsigned int Cd::getFaixas(){
-    return this->faixas;
+Cd::~Cd()
+{
+
 }
 
-void Cd::showInfo(){
-    cout << "\nCD:" << endl;
-    cout << " Código: " << this->getCodigo() << endl;
-    cout << " Título: " << this->getTitulo() << endl;
-    cout << " Discos: " << this->getDiscos() << endl;
-    cout << " Faixas: " << this->getFaixas() << endl;
+void Cd::setFaixas(unsigned int faixas)
+{
+	this->faixas = faixas;
 }
+
+unsigned int Cd::getFaixas()
+{
+	return faixas;
+}
+
+void Cd::showInfo()
+{
+	cout << "\n\nCd: ";
+	cout << "\n codigo(" << this->getCodigo() << ") ";
+	cout << "\n titulo(" << this->getTitulo() << ") ";
+	cout << "\n discos(" << this->getDiscos() << ") ";
+	cout << "\n duracao(" << this->getDuracao() << ") ";
+	cout << "\n faixas(" << this->getFaixas() << ") ";
+}
+
