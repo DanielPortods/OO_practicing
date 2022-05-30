@@ -1,4 +1,4 @@
-TARGET = ClassesObjetos
+TARGET = Main
 
 SOURCE = source
 BIN = bin
